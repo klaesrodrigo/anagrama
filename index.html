@@ -1,22 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt_br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>Anagrama</title>
 </head>
+
 <body style="text-align: center;">
     <h1>Anagrama</h1>
-    <p>
-        Palavra: 
-        <input type="text" id="palavra">
-    </p>
+    <div class="row">
+        <div class="col s12">
+            <div class="col s4">
+            </div>
+            <div class="col s4">
+                <input type="text" id="palavra" class="input-field"  placeholder="Palavra" >    
+            </div>
+            <div class="col s4">
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="col s4">
+            </div>
+            <div class="col s4">
+                <button class="btn waves-effect waves-light" type="submit" id="next" name="action">
+                    Submit
+                </button>
+            </div>
+        </div>
+        <div class="col s4"></div>
+    </div>
+    </div>
 
-    <input type="button" id="next">
 
     <pre id="resposta"></pre>
-
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>
