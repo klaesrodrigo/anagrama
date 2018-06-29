@@ -3,25 +3,37 @@ var palavra = document.getElementById('palavra');
 
 document.getElementById("next").addEventListener('click', function () {
 
+    //Retira o comportamento padrão do evento
+    event.preventDefault();
+
+    //Zera resposta
     respostaFinal.textContent = "";
+
+    //Valida palavra
+    if (palavra.value == "" || palavra.value == null) {
+        alert("Digite alguma palavra!");
+        palavra.focus();
+        return;
+    }
+
+    //Cria os arrays
     var letras = [];
     var numeros = [];
     var anagramas = [];
 
-    //divide a palavra em letras sem filtrar repitidas
+
+
+    //divide a palavra em letras sem filtrar repetidas
     var letras = palavra.value.toLowerCase().split("");
-    var filtro = [];
+
+    //Agrupa as letras repetidas
     var count = {};
-    var repeticao = 1;
 
     for (var l of letras)
         count[l] = 0;
 
-    //filtra as letras repitidas
+    //filtra as letras repetidas
     for (var x = 0; x < letras.length; x++) {
-        if (filtro.indexOf(letras[x]) == -1)
-            filtro.push(letras[x]);
-
         count[letras[x]] += 1;
     }
 
@@ -35,9 +47,7 @@ document.getElementById("next").addEventListener('click', function () {
         m = m * i;
 
     //define o numero de n
-
     for (var letra in count) {
-        console.log(letra);
         var soma = 1;
         if (count[letra] > 1) {
             for (var k = count[letra]; k > 0; k--)
@@ -51,7 +61,7 @@ document.getElementById("next").addEventListener('click', function () {
 
 
     //define o numero de combinações
-    if(n>0)
+    if (n > 0)
         var combinacoes = m / n;
     else
         var combinacoes = m;
